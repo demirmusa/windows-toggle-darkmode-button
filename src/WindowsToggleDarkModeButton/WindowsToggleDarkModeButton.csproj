@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Toggle Dark Mode</AssemblyName>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <PublishSingleFile>true</PublishSingleFile>
+        <SelfContained>true</SelfContained>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <ApplicationIcon>img\moon.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="img\moon.ico"/>
+        <Content Include="..\..\run.ps1">
+          <Link>run.ps1</Link>
+        </Content>
+        <Content Include="img\moon.ico">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="img\sun.ico"/>
+        <Content Include="img\sun.ico">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+</Project>
