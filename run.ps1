@@ -34,6 +34,7 @@ if (Test-Path -Path $lnkPath) {
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut($lnkPath)
 $shortcut.TargetPath = Join-Path -Path $publishDir -ChildPath "Toggle Dark Mode.exe"
+$shortcut.WorkingDirectory = $publishDir # Set the "Start in" directory
 $shortcut.Save()
 
 # Release the COM object
